@@ -27,7 +27,7 @@ where o.order_status = 'delivered'
 group by 1 ))
 select *
 from final_query
-where month = date'2018-06-01'
+where month between date'2018-03-01' and date'2018-06-01'
 
 ---- tampilkan jumlah aktif customer yang ada setiap bulannya dan bandingkan dengan bulan sebelumnya
 with final_query as ( select month , case when lag(active_customer)over(order by month) = 0 then null
