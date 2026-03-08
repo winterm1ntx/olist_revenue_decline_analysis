@@ -44,7 +44,6 @@ Penurunan terutama berasal dari new customer, sementara returning customer tidak
     
 1. Product Category Investigation
         Apakah penurunan jumlah new customer disebabkan oleh masalah pada produk tertentu?
-        Analisis lebih lanjut dilakukan terhadap kategori produk yang dibeli oleh new customer.
         Hasilnya menunjukkan bahwa penurunan revenue terjadi secara merata di hampir semua kategori, tanpa adanya satu kategori yang mengalami penurunan secara           dominan.
         Hal ini menunjukkan bahwa penurunan revenue tidak disebabkan oleh performa produk tertentu.
     
