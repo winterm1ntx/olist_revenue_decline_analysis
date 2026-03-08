@@ -5,8 +5,7 @@ Dataset telah divalidasi dengan memeriksa anomali harga, transaksi tanpa item, s
 
 1️⃣ Revenue Trend Analysis
 
-Revenue Olist mengalami penurunan pada Februari 2018, namun kembali pulih secara signifikan pada Maret. Pada dua bulan berikutnya, performa revenue cenderung
-stabil sebelum akhirnya mengalami penurunan tajam pada Juni 2018.
+Revenue Olist mengalami fluktuasi pada awal tahun kemudian turun pada Februari 2018, namun kembali pulih secara signifikan pada Maret. Pada dua bulan berikutnya, performa revenue cenderung stabil sebelum akhirnya mengalami penurunan tajam pada Juni 2018.
 Oleh karena itu, fokus analisis dilakukan pada periode Juni 2018 ketika revenue mengalami sudden drop.
 
 ⸻
