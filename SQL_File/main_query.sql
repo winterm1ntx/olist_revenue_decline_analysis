@@ -10,7 +10,7 @@ group by 1 )
 order by month )
 select*
 from final_query
-where month between date'2018-03-01' and date'2018-06-01'
+where month between date'2018-01-01' and date'2018-06-01'
 
 
 ---- menampilkan volume transaksi dan aov transaksi setiap bulannya dan bandingkan kedua metrik tersebut dengan bulan sebelumnya, untuk mengetahui metrik penyebab perubahan revenue.
@@ -27,7 +27,7 @@ where o.order_status = 'delivered'
 group by 1 ))
 select *
 from final_query
-where month between date'2018-03-01' and date'2018-06-01'
+where month between date'2018-01-01' and date'2018-06-01'
 
 ---- tampilkan jumlah aktif customer yang ada setiap bulannya dan bandingkan dengan bulan sebelumnya
 with final_query as ( select month , case when lag(active_customer)over(order by month) = 0 then null
@@ -40,7 +40,7 @@ where o.order_status = 'delivered'
 group by 1))
 select *
 from final_query
-where month = date'2018-06-01'
+where month between date'2018-01-01' and date'2018-06-01'
 
 ---- tampilkan dari customer hilang itu yang hilang customer baru atau yang sudah ada.
 with first_purchase_date as ( select c.customer_unique_id as customer , min(o.order_purchase_timestamp) as first_purchase
@@ -68,7 +68,7 @@ else ( active_customer_type - lag(active_customer_type)over(partition by custome
 from monthly_customer_type )
 select*
 from final_query 
-where month = date'2018-06-01'
+where month between date'2018-01-01' and date'2018-06-01'
 order by customer_type
 
 ---- tampilkan category product yang dibeli new customer lalu bandingkan dengan bulan sebelumnya.
@@ -108,3 +108,41 @@ select *
 from final_query
 where month = date'2018-06-01' and customer_type = 'New'
 order by customer_type  , mom_growth_revenue 
+
+--- tampilkan rata rata durasi pengiriman
+select* from ( select date_trunc('month', order_purchase_timestamp) as month , avg(order_delivered_customer_date - order_delivered_carrier_date) as avg_delivery_time
+from orders
+group by 1 )
+where month between date'2018-01-01' and date'2018-06-01'
+
+
+---- tampilkan revenue masing masing type customer tersebut
+with first_purchase_date as ( select c.customer_unique_id as customer , min(o.order_purchase_timestamp) as first_purchase
+from customer as c
+join orders as o
+on c.customer_id = o.customer_id
+where o.order_status = 'delivered'
+group by 1 )
+, monthly_customer as ( select distinct c.customer_unique_id as customer , date_trunc('month', o.order_purchase_timestamp) as month
+from orders as o
+join customer as c
+on o.customer_id = c.customer_id
+where o.order_status = 'delivered' )
+, customer_type as ( select mc.month , mc.customer , 
+case when date_trunc('month',f.first_purchase) = mc.month then 'New' else 'Returning' end as customer_type
+from monthly_customer as mc
+join first_purchase_date as f
+on mc.customer = f.customer )
+, revenue_breakdown as ( select date_trunc('month', o.order_purchase_timestamp) as month , ct.customer_type, sum(oi.price) as revenue
+from orders as o
+join order_item as oi
+on o.order_id = oi.order_id
+join customer as c
+on o.customer_id = c.customer_id
+join customer_type as ct
+on c.customer_unique_id = ct.customer and date_trunc('month', o.order_purchase_timestamp) = ct.month
+where o.order_status = 'delivered'
+group by 1 , 2  )
+select*
+from revenue_breakdown
+where month between date'2018-01-01' and date'2018-06-01'
