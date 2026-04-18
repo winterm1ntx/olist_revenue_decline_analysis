@@ -15,6 +15,8 @@ Revenue was relatively stable from March to May 2018, then dropped sharply by 12
 Revenue Decomposition
 
 Revenue = Volume x AOV
+    
     •    Volume Order: -9.6%
+    
     •    Average Order Value (AOV): -2.4%
 The revenue decline was primarily driven by a drop in transaction volume, while AOV remained relatively stable.
