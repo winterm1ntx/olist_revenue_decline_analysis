@@ -51,6 +51,9 @@ The Olist marketing team should investigate why new customer numbers dropped in 
 
 •    Cross-checked total revenue after join against raw data (identical result: 13,221,498.11)
 
+## 📊 Dashboard Preview
+![Dashboard](Visualisasi.png)
+
 ## 📂 File Structure
 SQL_File/ — main queries and validation queries
 
