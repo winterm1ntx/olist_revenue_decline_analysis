@@ -10,7 +10,7 @@ Revenue Drop → Decompose (Volume vs AOV) → Customer Analysis → Segmentatio
 ## 📊 Key Findings
 1. Revenue Trend
 
-Revenue was relatively stable from March to May 2018, then dropped sharply by 12.4% in June 2018. This pattern suggests a sudden event rather than a long-term declining trend.
+    Revenue was relatively stable from March to May 2018, then dropped sharply by 12.4% in June 2018. This pattern suggests a sudden event rather than a long-term     declining trend.
 
 Revenue Decomposition
 
@@ -23,7 +23,7 @@ The revenue decline was primarily driven by a drop in transaction volume, while 
 
 3. Customer Analysis
 
-Active customers dropped by 9.4%, consistent with the decline in order volume. This confirms that fewer customers making purchases was the main driver of the transaction drop.
+    Active customers dropped by 9.4%, consistent with the decline in order volume. This confirms that fewer customers making purchases was the main driver of the     transaction drop.
 
 4. Customer Segmentation
 
@@ -34,7 +34,7 @@ The decline was dominated by new customers. It is worth noting that the Olist da
 
 5. Product Category Investigation
 
-The decline occurred evenly across almost all product categories — no single category experienced a dominant drop. This eliminates the possibility that the revenue decline was caused by a specific product’s performance.
+    The decline occurred evenly across almost all product categories — no single category experienced a dominant drop. This eliminates the possibility that the        revenue decline was caused by a specific product’s performance.
 
 ## 💡 Key Insight
 The revenue decline in June 2018 was most likely caused by a problem in customer acquisition, not product or category performance.
