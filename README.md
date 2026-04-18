@@ -65,5 +65,4 @@ Tim marketing olist disarankan untuk mengevaluasi strategi akuisisi customer gun
 🛠 Tools Used
     •    SQL
     •    PostgreSQL
-    •    Power BI
 
